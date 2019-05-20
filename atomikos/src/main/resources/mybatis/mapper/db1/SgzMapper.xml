@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sgz.atomikos.mapper.db1.SgzMapper">
+
+    <select id="findById" resultType="SgzEntity" parameterType="Integer">
+       select id, userName,date, dbSource from sgz where id=#{id};
+     </select>
+
+    <select id="findAll" resultType="SgzEntity">
+   select id, userName,date, dbSource from sgz;
+  </select>
+
+    <insert id="addProduct" parameterType="SgzEntity">
+   INSERT INTO sgz(userName, dbSource,date) VALUES(#{userName}, DATABASE(),now());
+  </insert>
+
+</mapper>
