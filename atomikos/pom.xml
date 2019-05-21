@@ -12,7 +12,7 @@
     <artifactId>atomikos</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>atomikos</name>
-    <description>springboot+jta+atomikos解决多数据源事务问题</description>
+    <description>springboot+jta+atomikos解决多数据源分布式事务问题</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -73,6 +73,10 @@
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>1.2.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jta-atomikos</artifactId>
         </dependency>
     </dependencies>
 

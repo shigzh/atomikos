@@ -8,7 +8,6 @@ spring:
   #\u6570\u636E\u6E90\u914D\u7F6E
   datasource:
     db1:
-      type: com.alibaba.druid.pool.DruidDataSource #\u6307\u5B9A\u81EA\u5B9A\u4E49\u7684\u6570\u636E\u6E90\u7C7B\u578B,\u5982\u679C\u8FD9\u91CC\u4E0D\u6307\u5B9A,\u9ED8\u8BA4\u4F7F\u7528\u7684\u662FHikariDataSource
       username: root
       password: 12345678
       url: jdbc:mysql://192.168.5.130:3306/db1
@@ -31,7 +30,6 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500 #druid.stat.mergeSql=true \u5408\u5E76\u6267\u884C\u7684\u76F8\u540Csql\uFF0C\u907F\u514D\u56E0\u4E3A\u53C2\u6570\u4E0D\u540C\u800C\u7EDF\u8BA1\u591A\u6761sql\u8BED\u53E5, druid.stat.slowSqlMillis=500 \u7528\u6765\u914D\u7F6ESQL\u6162\u7684\u6807\u51C6\uFF0C\u6267\u884C\u65F6\u95F4\u8D85\u8FC7slowSqlMillis\u7684\u5C31\u662F\u6162
 
     db2:
-      type: com.alibaba.druid.pool.DruidDataSource #\u6307\u5B9A\u81EA\u5B9A\u4E49\u7684\u6570\u636E\u6E90\u7C7B\u578B,\u5982\u679C\u8FD9\u91CC\u4E0D\u6307\u5B9A,\u9ED8\u8BA4\u4F7F\u7528\u7684\u662FHikariDataSource
       username: root
       password: 12345678
       url: jdbc:mysql://192.168.5.130:3306/db2
@@ -73,3 +71,5 @@ logging:
     root: info
     com.sgz.atomikos: debug
   file: D:/logs/springboot.log
+
+#jta\u76F8\u5173\u53C2\u6570\u914D\u7F6E
