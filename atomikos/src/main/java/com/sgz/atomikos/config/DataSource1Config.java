@@ -17,7 +17,8 @@ import javax.sql.DataSource;
 
 /**
  * @Auther:shigzh
- * @Description:
+ * @Description: com.sgz.atomikos.test1下面的mapper访问的是db1数据库
+ * 这个是主数据源，所以要加@Primary注解
  * @create 2019/2/6 16:55
  */
 @Configuration
@@ -41,6 +42,7 @@ public class DataSource1Config {
     public SqlSessionFactory db1SqlSessionFactory(@Qualifier("db1DataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
+        //这里加载对应的mybatis的xml配置文件，application.yml里就不用配置了，即使配置了也不起作用
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:mybatis/mapper/db1/*.xml"));
         return bean.getObject();
     }

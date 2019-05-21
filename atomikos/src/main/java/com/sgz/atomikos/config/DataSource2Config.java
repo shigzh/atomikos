@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 /**
- * @Description:
+ * @Description:com.sgz.atomikos.test2下面的mapper访问的是db2数据库
  * @Auther:shigzh
  * @create 2019/5/20 17:42
  */
@@ -39,6 +39,7 @@ public class DataSource2Config {
     public SqlSessionFactory db2SqlSessionFactory(@Qualifier("db2DataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
+        //这里加载对应的mybatis的xml配置文件，application.yml里就不用配置了，即使配置了也不起作用
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:mybatis/mapper/db2/*.xml"));
         return bean.getObject();
     }

@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @Auther:shigzh
  * @create 2019/5/20 17:16
  */
-@Transactional
+@Transactional(value="db2TransactionManager")
 @Service
 public class TestService {
     @Autowired
@@ -22,5 +22,6 @@ public class TestService {
     public void testAdd(){
         user1Service.testAdd();
         user2Service.testAdd();
+        int a =1/0;
     }
 }
