@@ -21,7 +21,7 @@ import javax.sql.DataSource;
  * @create 2019/2/6 16:55
  */
 @Configuration
-@MapperScan(basePackages = "com.sgz.atomikos.mapper.db1", sqlSessionTemplateRef = "db1SqlSessionTemplate")
+@MapperScan(basePackages = "com.sgz.atomikos.test1", sqlSessionTemplateRef = "db1SqlSessionTemplate")
 public class DataSource1Config {
     //绑定数据源配置
     @ConfigurationProperties(prefix = "spring.datasource.db1")
@@ -29,6 +29,13 @@ public class DataSource1Config {
     public DataSource db1DataSource() {
         return new DruidDataSource();
     }
+
+    /**
+     * 创建Mybatis的连接会话工厂实例
+     * @param dataSource
+     * @return
+     * @throws Exception
+     */
     @Bean
     @Primary
     public SqlSessionFactory db1SqlSessionFactory(@Qualifier("db1DataSource") DataSource dataSource) throws Exception {
@@ -38,6 +45,11 @@ public class DataSource1Config {
         return bean.getObject();
     }
 
+    /**
+     * 创建该数据源的事务管理
+     * @param dataSource
+     * @return
+     */
     @Bean
     @Primary
     public DataSourceTransactionManager db1TransactionManager(@Qualifier("db1DataSource") DataSource dataSource) {

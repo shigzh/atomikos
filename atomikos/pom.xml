@@ -16,6 +16,13 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--项目使用mysql版本，默认是8.0.15 -->
+        <mysql.version>5.1.40</mysql.version>
+        <!--项目使用Tomcat版本 -->
+        <tomcat.version>8.5.38</tomcat.version>
     </properties>
 
     <dependencies>

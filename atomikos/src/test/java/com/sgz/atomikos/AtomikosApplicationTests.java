@@ -1,6 +1,6 @@
 package com.sgz.atomikos;
 
-import com.sgz.atomikos.service.TestService;
+import com.sgz.atomikos.test1.service.User1Service;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +11,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class AtomikosApplicationTests {
     @Autowired
-    private TestService testService;
+    private User1Service user1Service;
 
     @Test
     public void contextLoads() {
-        testService.testAdd();
+        user1Service.testAdd();
     }
 
 }

@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  * @create 2019/5/20 17:42
  */
 @Configuration
-@MapperScan(basePackages = "com.sgz.atomikos.mapper.db2", sqlSessionTemplateRef = "db2SqlSessionTemplate")
+@MapperScan(basePackages = "com.sgz.atomikos.test2", sqlSessionTemplateRef = "db2SqlSessionTemplate")
 public class DataSource2Config {
     //绑定数据源配置
     @ConfigurationProperties(prefix = "spring.datasource.db2")
@@ -28,6 +28,13 @@ public class DataSource2Config {
     public DataSource db2DataSource() {
         return new DruidDataSource();
     }
+
+    /**
+     * 创建Mybatis的连接会话工厂实例
+     * @param dataSource
+     * @return
+     * @throws Exception
+     */
     @Bean
     public SqlSessionFactory db2SqlSessionFactory(@Qualifier("db2DataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
@@ -36,6 +43,11 @@ public class DataSource2Config {
         return bean.getObject();
     }
 
+    /**
+     * 创建该数据源的事务管理
+     * @param dataSource
+     * @return
+     */
     @Bean
     public DataSourceTransactionManager db2TransactionManager(@Qualifier("db2DataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);

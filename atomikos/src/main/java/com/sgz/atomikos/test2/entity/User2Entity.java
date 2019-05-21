@@ -1,20 +1,18 @@
-package com.sgz.atomikos.entity;
+package com.sgz.atomikos.test2.entity;
 
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @Description:
  * @Auther:shigzh
- * @create 2019/5/7 17:51
+ * @create 2019/5/21 9:46
  */
 @Data
-public class SgzEntity implements Serializable {
+public class User2Entity {
     //按alt+enter键 生成序列化id
-    private static final long serialVersionUID = -3932087591646353874L;
-
+    private static final long serialVersionUID = -3932017591641353874L;
     private Integer id; //主键
     private String userName; //名称
     private Date date;

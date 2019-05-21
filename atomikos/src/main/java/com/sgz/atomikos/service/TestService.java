@@ -1,5 +1,7 @@
 package com.sgz.atomikos.service;
 
+import com.sgz.atomikos.test1.service.User1Service;
+import com.sgz.atomikos.test2.service.User2Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,11 +15,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class TestService {
     @Autowired
-    private Db1Service db1Service;
+    private User1Service user1Service;
+    @Autowired
+    private User2Service user2Service;
 
     public void testAdd(){
-        db1Service.testAdd();
-        //int a=1/0;
+        user1Service.testAdd();
+        user2Service.testAdd();
     }
-
 }
