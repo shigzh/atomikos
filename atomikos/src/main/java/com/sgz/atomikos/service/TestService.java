@@ -22,6 +22,5 @@ public class TestService {
     public void testAdd(){
         user1Service.testAdd();
         user2Service.testAdd();
-        int a =1/0;
     }
 }
