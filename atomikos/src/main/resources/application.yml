@@ -72,4 +72,3 @@ logging:
     com.sgz.atomikos: debug
   file: D:/logs/springboot.log
 
-#jta\u76F8\u5173\u53C2\u6570\u914D\u7F6E
